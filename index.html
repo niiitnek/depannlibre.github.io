@@ -1,0 +1,223 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Assistance informatique libre</title>
+  <meta name="description" content="Assistance informatique à distance : installer Linux, logiciels libres, sortir des GAFAM.">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="brand">
+      <span class="brand-user">user@libre</span>:<span class="brand-path">~</span>$ assistance
+    </div>
+
+    <nav aria-label="Navigation principale">
+      <a class="button button-primary" href="#contact">./contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div>
+        <p class="eyebrow">// assistance informatique à distance</p>
+
+        <h1>
+          Ton ordinateur<br>
+          t'appartient<span class="cursor">_</span>
+        </h1>
+
+        <p class="hero-description">
+          J'installe, je dépanne et je t'explique. Logiciels, systèmes,
+          et conseils pour ne plus dépendre des GAFAM.
+        </p>
+
+        <div class="button-group">
+          <a class="button button-primary" href="mailto:niiit@tutamail.com">
+            Demander de l'aide
+          </a>
+          <a class="button button-outline" href="#services">
+            man services
+          </a>
+        </div>
+      </div>
+
+      <div class="terminal" aria-label="Présentation sous forme de terminal">
+        <div class="terminal-header">
+          <span class="terminal-dot terminal-dot-red" aria-hidden="true"></span>
+          <span class="terminal-dot terminal-dot-yellow" aria-hidden="true"></span>
+          <span class="terminal-dot terminal-dot-green" aria-hidden="true"></span>
+          <span class="terminal-title">bash — support</span>
+        </div>
+
+        <div class="terminal-content">
+          <div><span class="prompt">$</span> whoami</div>
+          <div class="terminal-output">technicien-distance</div>
+
+          <div><span class="prompt">$</span> cat mission.txt</div>
+          <div class="terminal-output">
+            Installer. Dépanner. Expliquer.<br>
+            Rendre l'utilisateur autonome.
+          </div>
+
+          <div>
+            <span class="prompt">$</span> apt install liberté
+            <span class="terminal-option">--yes</span>
+          </div>
+          <div class="terminal-output">OK. Prêt à t'aider.</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="services" class="section">
+      <h2><span class="prompt">$</span> ls services/</h2>
+      <p class="section-description">
+        Une prestation = un problème réglé, expliqué. Prix libre : tu paies ce que tu peux. La moyenne des concurrents est indiquée pour comparaison.
+      </p>
+
+      <div class="services-grid">
+        <article class="card">
+          <div class="card-category">choisir/</div>
+          <h3>Choisir &amp; installer Linux</h3>
+          <p>Je t'aide à choisir la distribution adaptée, puis je l'installe.</p>
+          <div class="price">Prix libre</div>
+          <div class="compare">Concurrents : ~87 € en moyenne (forfait)</div>
+        </article>
+
+        <article class="card">
+          <div class="card-category">comprendre/</div>
+          <h3>Comprendre Linux</h3>
+          <p>Bases, commandes, mises à jour : tu deviens autonome.</p>
+          <div class="price">Prix libre</div>
+          <div class="compare">Concurrents : ~60 €/h en moyenne</div>
+        </article>
+
+        <article class="card">
+          <div class="card-category">gratuit/</div>
+          <h3>Logiciels gratuits alternatifs</h3>
+          <p>
+            Des équivalents gratuits à tes logiciels payants,
+            installés et expliqués.
+          </p>
+          <div class="price">Prix libre</div>
+          <div class="compare">Concurrents : ~38 € en moyenne (30 min)</div>
+        </article>
+
+        <article class="card">
+          <div class="card-category">open-source/</div>
+          <h3>Logiciels open source alternatifs</h3>
+          <p>
+            Alternatives libres au code ouvert, pour sortir des GAFAM.
+          </p>
+          <div class="price">Prix libre</div>
+          <div class="compare">Concurrents : ~38 € en moyenne (30 min)</div>
+        </article>
+      </div>
+
+      <div class="remote-help">
+        <div><span class="prompt">$</span> rustdesk --aide-a-distance</div>
+        <p>
+          Aide à distance disponible via RustDesk, un logiciel libre.
+          Tu gardes le contrôle de ton écran.
+        </p>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2><span class="prompt">$</span> diff gafam libre</h2>
+      <p class="section-description">
+        Quelques remplacements courants que je peux mettre en place.
+      </p>
+
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th scope="col">Propriétaire</th>
+              <th scope="col">Libre</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="proprietary">- Windows</td>
+              <td class="libre">+ Linux</td>
+            </tr>
+            <tr>
+              <td class="proprietary">- Chrome</td>
+              <td class="libre">+ Firefox</td>
+            </tr>
+            <tr>
+              <td class="proprietary">- Microsoft Office</td>
+              <td class="libre">+ Euro Office</td>
+            </tr>
+            <tr>
+              <td class="proprietary">- Google Drive</td>
+              <td class="libre">+ TutaDrive</td>
+            </tr>
+            <tr>
+              <td class="proprietary">- Photoshop</td>
+              <td class="libre">+ GIMP</td>
+            </tr>
+            <tr>
+              <td class="proprietary">- WhatsApp</td>
+              <td class="libre">+ Signal</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2><span class="prompt">$</span> ./deroulement.sh</h2>
+
+      <ol class="process-grid">
+        <li>
+          <span class="step-number">01</span>
+          <strong>Contact</strong>
+          <p>On parle de ton problème et de ce que tu souhaites.</p>
+        </li>
+        <li>
+          <span class="step-number">02</span>
+          <strong>Durée</strong>
+          <p>La durée est annoncée avant l'intervention. Le prix est libre.</p>
+        </li>
+        <li>
+          <span class="step-number">03</span>
+          <strong>Intervention</strong>
+          <p>J'interviens à distance avec ton accord.</p>
+        </li>
+        <li>
+          <span class="step-number">04</span>
+          <strong>Compte-rendu</strong>
+          <p>Je t'explique les changements réalisés.</p>
+        </li>
+      </ol>
+    </section>
+
+    <section id="contact" class="contact-section">
+      <div class="contact-card">
+        <div>
+          <h2>
+            <span class="prompt">$</span>
+            mail -s "besoin d'aide"
+          </h2>
+          <p>Écris-moi : réponse dans la semaine.</p>
+        </div>
+
+        <a class="button button-primary" href="mailto:niiit@tutamail.com">
+          niiit@tutamail.com
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    © BOUIS Quentin — fait avec des logiciels libres.
+    <span class="prompt">exit 0</span>
+  </footer>
+</body>
+</html>
