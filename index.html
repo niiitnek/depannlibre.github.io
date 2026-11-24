@@ -244,19 +244,28 @@
 
 <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
 <script>
-// Envoi du formulaire
+// Envoi du formulaire (diagnostique)
 document.getElementById("demande").onsubmit = async (e) => {
   e.preventDefault();
+  const retour = document.getElementById("retour");
   const f = new FormData(e.target);
   const data = Object.fromEntries(f);
   data.token = f.get("cf-turnstile-response");
-  const r = await fetch("https://demandes-depannlibre.bouisquentin.workers.dev", {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify(data),
-  });
-  document.getElementById("retour").textContent =
-    r.ok ? "Demande envoyée ✅ Je te réponds vite." : "Erreur, réessaie.";
+  try {
+    const r = await fetch("https://demandes-depannlibre.bouisquentin.workers.dev", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(data),
+    });
+    const texte = await r.text();
+    retour.textContent = r.ok
+      ? "Demande envoyée ✅ Je te réponds vite."
+      : `Erreur ${r.status} : ${texte}`;
+    if (r.ok) e.target.reset();
+  } catch (err) {
+    retour.textContent = "Erreur réseau : " + err.message;
+  }
+  if (window.turnstile) turnstile.reset();
 };
 
 // Ouverture / fermeture de la fenêtre
