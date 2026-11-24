@@ -250,7 +250,7 @@ document.getElementById("demande").onsubmit = async (e) => {
   const f = new FormData(e.target);
   const data = Object.fromEntries(f);
   data.token = f.get("cf-turnstile-response");
-  const r = await fetch("URL_DU_WORKER", {
+  const r = await fetch("demandes-depannlibre.bouisquentin.workers.dev", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(data),
