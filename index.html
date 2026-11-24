@@ -37,7 +37,7 @@
         </p>
 
         <div class="button-group">
-          <a class="button button-primary" href="mailto:niiit@tutamail.com">
+          <a class="button button-primary" href="#demande-aide">
             Demander de l'aide
           </a>
           <a class="button button-outline" href="#services">
@@ -221,5 +221,52 @@
     © BOUIS Quentin — fait avec des logiciels libres.
     <span class="prompt">exit 0</span>
   </footer>
+
+  <dialog id="fenetre-demande">
+  <button type="button" id="fermer-demande" aria-label="Fermer">✕</button>
+  <h2>Demander de l'aide</h2>
+
+  <form id="demande">
+    <input name="nom" placeholder="Ton nom" required>
+    <input name="contact" placeholder="Mail ou téléphone" required>
+    <select name="service" required>
+      <option>Choisir &amp; installer Linux</option>
+      <option>Comprendre Linux</option>
+      <option>Logiciels gratuits alternatifs</option>
+      <option>Logiciels open source alternatifs</option>
+    </select>
+    <textarea name="message" placeholder="Décris ton besoin" required></textarea>
+    <div class="cf-turnstile" data-sitekey="TA_SITE_KEY"></div>
+    <button>Envoyer</button>
+    <p id="retour"></p>
+  </form>
+</dialog>
+
+<script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+<script>
+// Envoi du formulaire
+document.getElementById("demande").onsubmit = async (e) => {
+  e.preventDefault();
+  const f = new FormData(e.target);
+  const data = Object.fromEntries(f);
+  data.token = f.get("cf-turnstile-response");
+  const r = await fetch("URL_DU_WORKER", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(data),
+  });
+  document.getElementById("retour").textContent =
+    r.ok ? "Demande envoyée ✅ Je te réponds vite." : "Erreur, réessaie.";
+};
+
+// Ouverture / fermeture de la fenêtre
+const fenetre = document.getElementById("fenetre-demande");
+document.getElementById("ouvrir-demande").onclick = (e) => {
+  e.preventDefault();
+  fenetre.showModal();
+};
+document.getElementById("fermer-demande").onclick = () => fenetre.close();
+fenetre.onclick = (e) => { if (e.target === fenetre) fenetre.close(); };
+</script>
 </body>
 </html>
