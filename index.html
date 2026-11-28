@@ -84,39 +84,29 @@
       <div class="services-grid">
         <article class="card">
           <div class="card-category">choisir/</div>
-          <h3>Choisir &amp; installer Linux</h3>
+          <h3>Choisir &amp; Installer son OS</h3>
           <p>Je t'aide à choisir la distribution adaptée, puis je l'installe.</p>
           <div class="price">Prix libre</div>
-          <div class="compare">Concurrents : ~87 € en moyenne (forfait)</div>
+          <div class="compare">~87 € en moyenne (forfait)</div>
         </article>
 
         <article class="card">
           <div class="card-category">comprendre/</div>
-          <h3>Comprendre Linux</h3>
+          <h3>Comprendre &amp; Apprendre Linux</h3>
           <p>Bases, commandes, mises à jour : tu deviens autonome.</p>
           <div class="price">Prix libre</div>
-          <div class="compare">Concurrents : ~60 €/h en moyenne</div>
+          <div class="compare">~60 €/h en moyenne</div>
         </article>
 
         <article class="card">
-          <div class="card-category">gratuit/</div>
-          <h3>Logiciels gratuits alternatifs</h3>
+          <div class="card-category">alternatives/</div>
+          <h3>Logiciels alternatifs <br>[free / open-source]</h3>
           <p>
-            Des équivalents gratuits à tes logiciels payants,
-            installés et expliqués.
+            Des alternatives gratuites et libres à tes logiciels payants,
+            installées et expliquées.
           </p>
           <div class="price">Prix libre</div>
-          <div class="compare">Concurrents : ~38 € en moyenne (30 min)</div>
-        </article>
-
-        <article class="card">
-          <div class="card-category">open-source/</div>
-          <h3>Logiciels open source alternatifs</h3>
-          <p>
-            Alternatives libres au code ouvert, pour sortir des GAFAM.
-          </p>
-          <div class="price">Prix libre</div>
-          <div class="compare">Concurrents : ~38 € en moyenne (30 min)</div>
+          <div class="compare">~38 € en moyenne (30 min)</div>
         </article>
       </div>
 
@@ -232,8 +222,7 @@
     <select name="service" required>
       <option>Choisir &amp; installer Linux</option>
       <option>Comprendre Linux</option>
-      <option>Logiciels gratuits alternatifs</option>
-      <option>Logiciels open source alternatifs</option>
+      <option>Logiciels gratuits &amp; open source alternatifs</option>
     </select>
     <textarea name="message" placeholder="Décris ton besoin" required></textarea>
     <div class="cf-turnstile" data-sitekey="0x4AAAAAAGQ9cOVOmsFu8y6o"></div>  <!--clé turnstile public-->
@@ -259,7 +248,7 @@ document.getElementById("demande").onsubmit = async (e) => {
     });
     const texte = await r.text();
     retour.textContent = r.ok
-      ? "Demande envoyée ✅ Je te réponds vite."
+      ? "Demande envoyée! Je te réponds au plus vite."
       : `Erreur ${r.status} : ${texte}`;
     if (r.ok) e.target.reset();
   } catch (err) {
